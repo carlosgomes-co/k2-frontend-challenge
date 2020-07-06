@@ -34,6 +34,26 @@
   }
 }
 
+.min-half-height {
+  min-height: 300px;
+}
+
+.min-half-height-mobile {
+  @media (max-width: 992px) {
+    min-height: 300px;
+  }
+}
+
+.half-height {
+  height: 300px;
+}
+
+.half-height-mobile {
+  @media (max-width: 992px) {
+    height: 300px;
+  }
+}
+
 .margin-zero {
   margin: 0;
 }

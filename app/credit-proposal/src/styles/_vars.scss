@@ -39,7 +39,7 @@ $button: linear-gradient(180deg, $base 28.13%, $light-yellow 100%);
 $button-cta: linear-gradient(180deg, $peach 0%, $yellow 100%);
 $button-curtain: linear-gradient(180deg, transparentize($peach, 1), $primary-light 80%);
 $nature: linear-gradient(180deg, $peach 0%, $yellow 100%);
-$curtain: linear-gradient(180deg, transparentize($peach, 1), $primary-light 100%);
+$curtain: linear-gradient(180deg, transparentize($peach, 1) 40%, $primary-light 100%);
 $background-gradients: (
   "body": $body,
   "page": $page,
@@ -76,6 +76,7 @@ $font_families: (
 
 /* Font sizes */
 $font_sizes: (
+  0: 4vw,
   1: 36px,
   2: 24px,
   3: 20px,
@@ -98,6 +99,11 @@ $font_weights: (
   "semi-bold": $semi-bold,
   "bold": $bold,
   "extrabold": $extrabold,
+);
+
+$image-sizes: (
+  "logo": 20%,
+  "logo-mobile": 25%,
 );
 
 /* 
@@ -161,6 +167,7 @@ $font_weights: (
   /* Font sizes */
   @each $number, $font_size in $font_sizes {
     --fs-#{$number}: #{$font_size};
+    --kh-#{$number}: #{$font_size};
 
     /* class */
     .font-size-#{$number} {
@@ -176,6 +183,41 @@ $font_weights: (
       }
       @media (min-width: 992px) {
         font-size: $font_size;
+      }
+      @media (min-width: 1200px) {
+        font-size: $font_size * 1.3;
+      }
+      @media (min-width: 1600px) {
+        font-size: $font_size * 1.4;
+      }
+      @media (min-width: 2000px) {
+        font-size: $font_size * 1.5;
+      }
+    }
+
+    /* line */
+    .line-height-#{$number} {
+      line-height: $font_size;
+      @media (min-width: 300px) {
+        line-height: $font_size * 0.9;
+      }
+      @media (min-width: 576px) {
+        line-height: $font_size * 1.1;
+      }
+      @media (min-width: 768px) {
+        line-height: $font_size * 1.3;
+      }
+      @media (min-width: 992px) {
+        line-height: $font_size * 1.4;
+      }
+      @media (min-width: 1200px) {
+        line-height: $font_size * 1.5;
+      }
+      @media (min-width: 1600px) {
+        line-height: $font_size * 1.6;
+      }
+      @media (min-width: 2000px) {
+        line-height: $font_size * 1.7;
       }
     }
   }
