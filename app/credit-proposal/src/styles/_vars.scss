@@ -1,0 +1,192 @@
+/* Theme Vars*/
+$background: #ffb7ad;
+
+$primary: #001e6a;
+$primary-light: #001e6bcc;
+$secondary: #662d91;
+$accent: #ef8f00;
+$accent-hover: #173787;
+
+$transparent: #ffffff00;
+$black: #000000;
+$base: #ffffff;
+$red: #6a364c;
+$blue: #194374;
+$peach: #ffb6ac;
+$light-yellow: #fffad0;
+$yellow: #ffec66;
+
+$colors: (
+  "background": $background,
+  "primary": $primary,
+  "primary-light": $primary-light,
+  "secondary": $secondary,
+  "accent": $accent,
+  "accent-hover": $accent-hover,
+  "transparent": $transparent,
+  "base": $base,
+  "red": $red,
+  "blue": $blue,
+  "peach": $peach,
+  "light-yellow": $light-yellow,
+  "yellow": $yellow,
+);
+
+// Background Gradients
+$body: url("/assets/img/pattern.png"), linear-gradient(180deg, $red 0%, $blue 100%);
+$page: linear-gradient(0deg, $transparent, $transparent), linear-gradient(180deg, $peach 0%, $light-yellow 100%);
+$button: linear-gradient(180deg, $base 28.13%, $light-yellow 100%);
+$button-cta: linear-gradient(180deg, $peach 0%, $yellow 100%);
+$button-curtain: linear-gradient(180deg, transparentize($peach, 1), $primary-light 80%);
+$nature: linear-gradient(180deg, $peach 0%, $yellow 100%);
+$curtain: linear-gradient(180deg, transparentize($peach, 1), $primary-light 100%);
+$background-gradients: (
+  "body": $body,
+  "page": $page,
+  "button": $button,
+  "button-cta": $button-cta,
+  "button-curtain": $button-curtain,
+  "nature": $nature,
+  "curtain": $curtain,
+);
+
+// Box Shadows
+$register-shadow: 0px 20px 20px transparentize($black, 0.9), 5px 10px 0px transparentize($black, 0.9), 5px 12px 5px transparentize($black, 0.9), 0px 4px 4px transparentize($black, 0.8);
+$box-shadows: (
+  "register": $register-shadow,
+  "button": 2px 3px 0px transparentize($primary, 0.6),
+  "button-hover": 0 8px 8px 0 transparentize($primary, 0.75),
+  "button-cta": 3px 5px 0px transparentize($primary, 0.6),
+);
+
+// Border Radius
+$border-radius: (
+  "small": 45px,
+  "medium": 50px,
+  "big": 70px,
+);
+
+/* Font config */
+/* Font Families */
+$font_primary: "Dosis", sans-serif;
+
+$font_families: (
+  "primary": $font_primary,
+);
+
+/* Font sizes */
+$font_sizes: (
+  1: 36px,
+  2: 24px,
+  3: 20px,
+  4: 18px,
+  5: 15px,
+  6: 14px,
+  7: 12px,
+);
+
+/* Font weight */
+$light: 300;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extrabold: 800;
+
+$font_weights: (
+  "light": $light,
+  "medium": $medium,
+  "semi-bold": $semi-bold,
+  "bold": $bold,
+  "extrabold": $extrabold,
+);
+
+/* 
+  * * * * *
+  * Build *
+  * * * * *
+  */
+.vars {
+  /* Colors */
+  @each $name, $color in $colors {
+    /* make colors accessible via: var(--color-name) */
+    --c-#{$name}: #{$color};
+    --c-#{$name}-80: transparentize($color, 0.2);
+    --c-#{$name}-60: transparentize($color, 0.4);
+    --c-#{$name}-40: transparentize($color, 0.6);
+
+    /* class */
+    .color-#{$name} {
+      color: #{$color};
+    }
+    .color-#{$name}-80 {
+      color: transparentize($color, 0.2);
+    }
+    .color-#{$name}-60 {
+      color: transparentize($color, 0.4);
+    }
+    .color-#{$name}-40 {
+      color: transparentize($color, 0.6);
+    }
+
+    /* background */
+    .background-color-#{$name} {
+      background-color: #{$color};
+    }
+  }
+
+  /* Backgrounds */
+  @each $name, $gradient in $background-gradients {
+    .background-#{$name} {
+      background: #{$gradient};
+    }
+  }
+
+  /* Box Shadows */
+  @each $name, $shadow in $box-shadows {
+    .box-shadow-#{$name} {
+      box-shadow: #{$shadow};
+    }
+  }
+
+  /* Font Families */
+  @each $name, $font_family in $font_families {
+    --ff-#{$name}: #{$font_family};
+
+    /* class */
+    .font-family-#{$name} {
+      font-family: $font_family;
+    }
+  }
+
+  /* Font sizes */
+  @each $number, $font_size in $font_sizes {
+    --fs-#{$number}: #{$font_size};
+
+    /* class */
+    .font-size-#{$number} {
+      font-size: $font_size;
+      @media (min-width: 300px) {
+        font-size: $font_size * 0.7;
+      }
+      @media (min-width: 576px) {
+        font-size: $font_size * 0.8;
+      }
+      @media (min-width: 768px) {
+        font-size: $font_size * 0.9;
+      }
+      @media (min-width: 992px) {
+        font-size: $font_size;
+      }
+    }
+  }
+
+  /* Font weight */
+  @each $name, $font_weight in $font_weights {
+    --fw-#{$name}: #{$font_weight};
+
+    /* class */
+    .font-weight-#{$name} {
+      font-weight: $font_weight;
+    }
+  }
+}

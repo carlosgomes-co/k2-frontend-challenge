@@ -1,0 +1,103 @@
+/* Mat form field style override */
+.page {
+  .mat-form-field-appearance-outline {
+    line-height: inherit;
+
+    :focus {
+      outline: none;
+    }
+
+    .mat-form-field-wrapper {
+      margin: 0;
+
+      .mat-form-field-flex {
+        margin-top: -9px;
+
+        .mat-form-field-outline {
+          // @extend .background-color-grey-10;
+          top: 9px;
+
+          .mat-form-field-outline-start {
+            border: 1px solid $accent;
+            border-right-style: none;
+            border-radius: 50px 0 0 50px;
+            min-width: 50px;
+          }
+
+          .mat-form-field-outline-end {
+            border: 1px solid $accent;
+            border-left-style: none;
+            border-radius: 0 50px 50px 0;
+          }
+        }
+
+        /* :hover */
+        .mat-form-field-outline-thick {
+          .mat-form-field-outline-end,
+          .mat-form-field-outline-gap,
+          .mat-form-field-outline-start {
+            border-color: $accent-hover;
+          }
+        }
+
+        .mat-form-field-infix {
+          @extend .font-size-3;
+          font-family: $font_primary;
+          font-weight: $medium;
+          padding: 20px 0 11px 0;
+          border-top: 5px;
+          color: $accent;
+          &:hover {
+            input {
+              @include transition(all 0.2s ease-out);
+              color: $accent-hover;
+            }
+          }
+
+          .mat-select {
+            .mat-select-trigger {
+              .mat-select-value {
+                @extend .font-size-3;
+                font-family: $font_primary;
+                font-weight: $medium;
+                color: $accent;
+              }
+
+              .mat-select-arrow-wrapper {
+                transform: none;
+
+                .mat-select-arrow {
+                  width: 13px;
+                  height: 13px;
+                  background-image: url("/assets/img/chevron-down.svg");
+                  background-position: center center;
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mat-form-field-type-mat-input {
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        padding-right: 1px;
+      }
+    }
+  }
+}
+
+/* Mat select overlay */
+.cdk-overlay-container {
+  .mat-select-panel {
+    .mat-option {
+      @extend .font-size-3;
+      font-family: $font_primary;
+      font-weight: $medium;
+      color: $accent;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// Imports
+@import 'css3-prefix';
+
+// Box Sizing
+// @param {*} $type [border-box] - Type
+// @require {mixin} css3-prefix
+@mixin box-sizing($type: border-box) {
+  @include css3-prefix('box-sizing', $type);
+}

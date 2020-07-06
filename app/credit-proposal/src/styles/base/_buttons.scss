@@ -1,0 +1,46 @@
+.btn {
+  @extend .pl-3;
+  @extend .pr-3;
+  @extend .background-button;
+  @extend .font-family-primary;
+  @extend .font-weight-extrabold;
+  @extend .font-size-2;
+  @extend .color-primary-light;
+  @extend .box-shadow-button;
+  @include transition(all 0.2s ease-out);
+
+  min-width: 111px;
+  min-height: 41px;
+  border-radius: map-get($border-radius, small);
+  border: 3px solid $accent;
+  text-transform: capitalize;
+  letter-spacing: 0.33px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @media (min-width: 300px) {
+    & {
+      min-width: 40px;
+    }
+  }
+  @media (min-width: 576px) {
+    & {
+      min-width: 70px;
+    }
+  }
+
+  &:hover {
+    @extend .color-accent-hover;
+    @extend .box-shadow-button-hover;
+    transform: scale3d(0.9, 0.9, 0.9);
+    background-color: $accent;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    background-color: transparentize($accent, 0.2);
+    box-shadow: 0 8px 8px 0 transparentize($accent, 0.8);
+    transform: translate(0px, 2px);
+  }
+}

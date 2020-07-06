@@ -1,0 +1,107 @@
+<article [ngSwitch]="page" class="page" @fade>
+  <!-- [0] Loading -->
+  <section *ngSwitchCase="0" class="register register--loading">
+    <div class="form">
+      <ng-container *ngTemplateOutlet="header"></ng-container>
+      <div class="row">
+        <div class="col text-center"> Loading... </div>
+      </div>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </div>
+  </section>
+
+  <!-- [1] Credit Proposal - Start -->
+  <section *ngSwitchCase="1" class="container register register--start">
+    <div class="form">
+      <ng-container *ngTemplateOutlet="headerStart"></ng-container>
+      <form #registerForm="ngForm" (ngSubmit)="goTo('register/credit-proposal/about-you')">
+        <div class="row">
+          <div class="col text-center">
+            <button class="d-inline-block btn mt-3"
+              [ngbTooltip]="'Faça uma solicitação de crédito.'">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </div>
+  </section>
+
+  <!-- [2] Credit Proposal - About You -->
+  <section *ngSwitchCase="2" class="register register--form">
+    <div class="form">
+      <ng-container *ngTemplateOutlet="header"></ng-container>
+      <form #registerForm="ngForm" (ngSubmit)="goTo('register/credit-proposal/your-situation')">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col text-center">
+                <button class="d-inline-block btn mt-3"
+                  [ngbTooltip]="'Faça uma solicitação de crédito.'">Cadastrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </div>
+  </section>
+
+  <!-- [3] Credit Proposal - Your Situation -->
+  <section *ngSwitchCase="3" class="register register--form">
+  </section>
+
+  <!-- [4] Credit Proposal - Your Income -->
+  <section *ngSwitchCase="4" class="register register--form register-form-cta">
+  </section>
+
+  <!-- [5] Credit Proposal - Result -->
+  <section *ngSwitchCase="5" class="register register--end">
+    <div class="form">
+      <ng-container *ngTemplateOutlet="headerEnd"></ng-container>
+      <form #registerForm="ngForm" (ngSubmit)="goTo('register/credit-proposal/about-you')">
+        <div class="row">
+          <div class="col text-center">
+            <button class="d-inline-block btn mt-3"
+              [ngbTooltip]="'Faça uma solicitação de crédito.'">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </div>
+  </section>
+</article>
+
+
+
+<!-- Micro Components -->
+<!-- Header -->
+<ng-template #headerStart>
+  <header>
+    <img src="/assets/img/logo.png">
+    <h1>Inclusão financeira<br>digital para você<br>e sua família.</h1>
+  </header>
+</ng-template>
+<ng-template #header>
+  <header>
+    <img src="/assets/img/logo.png">
+    <h1>Solicitação de Crédito</h1>
+    <h2>Cadastro</h2>
+  </header>
+</ng-template>
+<ng-template #headerEnd>
+  <header>
+    <img src="/assets/img/logo.png">
+    <h1>Solicitação de Crédito</h1>
+    <h2>Resultado</h2>
+  </header>
+</ng-template>
+
+<!-- Nature -->
+<ng-template #nature>
+  <div class="nature">
+    <div class="shadow"></div>
+    <img class="left" src="/assets/img/nature-left.svg">
+    <img class="right" src="/assets/img/nature-right.svg">
+    <img class="bottom" src="/assets/img/nature-bottom.svg">
+  </div>
+</ng-template>
