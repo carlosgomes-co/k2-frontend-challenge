@@ -1,0 +1,59 @@
+.ease-out {
+  @include transition(all 0.3s ease-out);
+}
+
+.full-width {
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.full-width-mobile {
+  @media (max-width: 992px) {
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
+
+.min-full-height {
+  min-height: 100vh;
+}
+
+.min-full-height-mobile {
+  @media (max-width: 992px) {
+    min-height: 100vh;
+  }
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.full-height-mobile {
+  @media (max-width: 992px) {
+    height: 100vh;
+  }
+}
+
+.min-half-height {
+  min-height: 300px;
+}
+
+.min-half-height-mobile {
+  @media (max-width: 992px) {
+    min-height: 300px;
+  }
+}
+
+.half-height {
+  height: 300px;
+}
+
+.half-height-mobile {
+  @media (max-width: 992px) {
+    height: 300px;
+  }
+}
+
+.margin-zero {
+  margin: 0;
+}

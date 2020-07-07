@@ -1,0 +1,244 @@
+/* Theme Vars*/
+$background: #ffb7ad;
+
+$primary: #001e6a;
+$primary-light: #001e6bcc;
+$primary-vivid: #1e0c78d9;
+$secondary: #662d91;
+$accent: #ef8f00;
+$accent-hover: #173787;
+
+$transparent: #ffffff00;
+$black: #000000;
+$base: #ffffff;
+$red: #6a364c;
+$blue: #194374;
+$peach: #ffb6ac;
+$light-yellow: #fffad0;
+$yellow: #ffec66;
+
+$colors: (
+  "background": $background,
+  "primary": $primary,
+  "primary-light": $primary-light,
+  "primary-vivid": $primary-vivid,
+  "secondary": $secondary,
+  "accent": $accent,
+  "accent-hover": $accent-hover,
+  "transparent": $transparent,
+  "base": $base,
+  "red": $red,
+  "blue": $blue,
+  "peach": $peach,
+  "light-yellow": $light-yellow,
+  "yellow": $yellow,
+);
+
+// Background Gradients
+$body: url("/assets/img/pattern.png"), linear-gradient(180deg, $red 0%, $blue 100%);
+$page: linear-gradient(0deg, $transparent, $transparent), linear-gradient(180deg, $peach 0%, $yellow 100%);
+$form: linear-gradient(0deg, transparentize($white, 0.2), transparentize($white, 0.2)), linear-gradient(180deg, $peach 0%, $yellow 100%);
+$button: linear-gradient(180deg, $base 28.13%, $light-yellow 100%);
+$button-cta: linear-gradient(180deg, $peach 0%, $yellow 100%);
+$button-curtain: linear-gradient(180deg, transparentize($peach, 1), $primary-light 80%);
+$nature: linear-gradient(180deg, $peach 0%, $yellow 100%);
+$curtain: linear-gradient(180deg, transparentize($peach, 1) 40%, $primary-vivid 100%);
+$background-gradients: (
+  "body": $body,
+  "page": $page,
+  "form": $form,
+  "button": $button,
+  "button-cta": $button-cta,
+  "button-curtain": $button-curtain,
+  "nature": $nature,
+  "curtain": $curtain,
+);
+
+// Box Shadows
+$register-shadow: 0px 20px 20px transparentize($black, 0.9), 5px 10px 0px transparentize($black, 0.9), 5px 12px 5px transparentize($black, 0.9), 0px 4px 4px transparentize($black, 0.8);
+$box-shadows: (
+  "register": $register-shadow,
+  "form": 3px 3px 10px rgba(0, 0, 0, 0.05),
+  "nature": 0px 20px 20px transparentize($primary, 0.75),
+  "button": 2px 3px 0px transparentize($primary, 0.6),
+  "button-stepper": 2px 3px 0px transparentize($primary, 0.6),
+  "button-hover": 0 8px 8px 0 transparentize($primary, 0.75),
+  "button-cta": 3px 5px 0px transparentize($primary, 0.6),
+);
+
+// Border Radius
+$border-radius: (
+  "logo": 0.8rem,
+  "small": 45px,
+  "medium": 50px,
+  "big": 70px,
+);
+
+/* Font config */
+/* Font Families */
+$font-primary: "Dosis", sans-serif;
+
+$font-families: (
+  "primary": $font-primary,
+);
+
+/* Font sizes */
+$font-sizes: (
+  0: 4vw,
+  1: 36px,
+  2: 24px,
+  3: 20px,
+  4: 18px,
+  5: 15px,
+  6: 14px,
+  7: 12px,
+  8: 9px
+);
+
+/* Font weight */
+$light: 300;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extrabold: 800;
+
+$font-weights: (
+  "light": $light,
+  "medium": $medium,
+  "semi-bold": $semi-bold,
+  "bold": $bold,
+  "extrabold": $extrabold,
+);
+
+$image-sizes: (
+  "logo": 20%,
+  "logo-mobile": 25%,
+  "logo-form": 15%,
+);
+
+/* 
+  * * * * *
+  * Build *
+  * * * * *
+  */
+.vars {
+  /* Colors */
+  @each $name, $color in $colors {
+    /* make colors accessible via: var(--color-name) */
+    --c-#{$name}: #{$color};
+    --c-#{$name}-80: transparentize($color, 0.2);
+    --c-#{$name}-60: transparentize($color, 0.4);
+    --c-#{$name}-40: transparentize($color, 0.6);
+
+    /* class */
+    .color-#{$name} {
+      color: #{$color};
+    }
+    .color-#{$name}-80 {
+      color: transparentize($color, 0.2);
+    }
+    .color-#{$name}-60 {
+      color: transparentize($color, 0.4);
+    }
+    .color-#{$name}-40 {
+      color: transparentize($color, 0.6);
+    }
+
+    /* background */
+    .background-color-#{$name} {
+      background-color: #{$color};
+    }
+  }
+
+  /* Backgrounds */
+  @each $name, $gradient in $background-gradients {
+    .background-#{$name} {
+      background: #{$gradient};
+    }
+  }
+
+  /* Box Shadows */
+  @each $name, $shadow in $box-shadows {
+    .box-shadow-#{$name} {
+      box-shadow: #{$shadow};
+    }
+  }
+
+  /* Font Families */
+  @each $name, $font_family in $font-families {
+    --ff-#{$name}: #{$font_family};
+
+    /* class */
+    .font-family-#{$name} {
+      font-family: $font_family;
+    }
+  }
+
+  /* Font sizes */
+  @each $number, $font_size in $font-sizes {
+    --fs-#{$number}: #{$font_size};
+    --lh-#{$number}: #{$font_size};
+
+    /* class */
+    .font-size-#{$number} {
+      font-size: $font_size;
+      @media (min-width: 300px) {
+        font-size: $font_size * 0.7;
+      }
+      @media (min-width: 576px) {
+        font-size: $font_size * 0.8;
+      }
+      @media (min-width: 768px) {
+        font-size: $font_size * 0.9;
+      }
+      @media (min-width: 992px) {
+        font-size: $font_size;
+      }
+      @media (min-width: 1200px) {
+        font-size: $font_size * 1.3;
+      }
+      @media (min-width: 1600px) {
+        font-size: $font_size * 1.4;
+      }
+      @media (min-width: 2000px) {
+        font-size: $font_size * 1.5;
+      }
+    }
+
+    /* line */
+    .line-height-#{$number} {
+      line-height: $font_size;
+      @media (min-width: 300px) {
+        line-height: $font_size * 0.9;
+      }
+      @media (min-width: 576px) {
+        line-height: $font_size * 1.1;
+      }
+      @media (min-width: 768px) {
+        line-height: $font_size * 1.3;
+      }
+      @media (min-width: 992px) {
+        line-height: $font_size * 1.4;
+      }
+      @media (min-width: 1200px) {
+        line-height: $font_size * 1.5;
+      }
+      @media (min-width: 1600px) {
+        line-height: $font_size * 1.6;
+      }
+      @media (min-width: 2000px) {
+        line-height: $font_size * 1.7;
+      }
+    }
+  }
+
+  /* Font weight */
+  @each $name, $font_weight in $font-weights {
+    --fw-#{$name}: #{$font_weight};
+
+    /* class */
+    .font-weight-#{$name} {
+      font-weight: $font_weight;
+    }
+  }
+}

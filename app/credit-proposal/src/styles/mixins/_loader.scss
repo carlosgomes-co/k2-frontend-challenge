@@ -1,0 +1,17 @@
+
+@mixin loader($size: 100) {
+  .loading {
+    height: $size+px;
+
+    .loader {
+      width: $size+px;
+      margin-top: 0px;
+
+      .spinner {
+        width: $size+px;
+        height: $size+px;
+        border-width: ($size*0.02)+px;
+      }
+    }
+  }
+}

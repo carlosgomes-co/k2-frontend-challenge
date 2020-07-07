@@ -1,0 +1,54 @@
+/* Material Reset */
+@import '~@angular/material/theming';
+
+/* Theme */
+$mat-theme-default: (
+  50: lighten($secondary, 50),
+  100: lighten($secondary, 40),
+  200: lighten($secondary, 30),
+  300: lighten($secondary, 20),
+  400: lighten($secondary, 10),
+  500: $secondary,
+  600: darken($secondary, 10),
+  700: darken($secondary, 20),
+  800: darken($secondary, 30),
+  900: darken($secondary, 40),
+  A100: lighten($secondary, 70),
+  A200: lighten($secondary, 15),
+  A400: darken($secondary, 70),
+  A700: darken($secondary, 80),
+  contrast: (
+    50: $secondary,
+    100: $secondary,
+    200: $secondary,
+    300: $light-yellow,
+    400: $light-yellow,
+    500: $light-yellow,
+    600: $light-yellow,
+    700: $light-yellow,
+    800: $light-yellow,
+    900: $light-yellow,
+    A100: $secondary,
+    A200: $light-yellow,
+    A400: $light-yellow,
+    A700: $light-yellow,
+  ),
+);
+
+@include mat-core();
+
+/* Define the palettes for your theme using the Material Design palettes available in palette.scss
+ * (imported above). For each palette, you can optionally specify a default, lighter, and darker
+ * hue. Available color palettes: https://material.io/design/color/ */
+$app-primary: mat-palette($mat-theme-default);
+$app-accent: mat-palette($mat-indigo, A200, A100, A400);
+/* The warn palette is optional (defaults to red). */
+$app-warn: mat-palette($mat-red);
+
+/* Create the theme object (a Sass map containing all of the palettes). */
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+/* Include theme styles for core and each component used in your app.
+ * Alternatively, you can import and @include the theme mixins for each component
+ * that you are using. */
+@include angular-material-theme($app-theme);

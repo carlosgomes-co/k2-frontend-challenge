@@ -1,0 +1,338 @@
+<article [ngSwitch]="page" class="page">
+  <!-- [0] Loading -->
+  <ng-container *ngSwitchCase="0">
+    <section class="container register register--page register--page-form register--loading">
+      <div class="form">
+        <ng-container *ngTemplateOutlet="header"></ng-container>
+        <ng-container *ngTemplateOutlet="stepHelper"></ng-container>
+        <div class="loader w-50 ml-5 pt-5 pl-5 pl-sm-0">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-75"
+            style="margin: auto; background: rgba(255, 255, 255, 0); display: block; shape-rendering: auto;"
+            width="130" height="130" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <g transform="translate(80,50)">
+              <g transform="rotate(0)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="1" transform="scale(1.16222 1.16222)">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.875s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="-0.875s"></animate>
+                </circle>
+              </g>
+            </g>
+            <g transform="translate(71.21320343559643,71.21320343559643)">
+              <g transform="rotate(45)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="0.875" transform="scale(1.22472 1.22472)">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.75s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="-0.75s"></animate>
+                </circle>
+              </g>
+            </g>
+            <g transform="translate(50,80)">
+              <g transform="rotate(90)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="0.75" transform="scale(1.28722 1.28722)">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.625s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="-0.625s"></animate>
+                </circle>
+              </g>
+            </g>
+            <g transform="translate(28.786796564403577,71.21320343559643)">
+              <g transform="rotate(135)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="0.625" transform="scale(1.34972 1.34972)">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.5s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="-0.5s"></animate>
+                </circle>
+              </g>
+            </g>
+            <g transform="translate(20,50.00000000000001)">
+              <g transform="rotate(180)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="0.5" transform="scale(1.41222 1.41222)">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.375s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="-0.375s"></animate>
+                </circle>
+              </g>
+            </g>
+            <g transform="translate(28.78679656440357,28.786796564403577)">
+              <g transform="rotate(225)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="0.375" transform="scale(1.47472 1.47472)">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.25s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="-0.25s"></animate>
+                </circle>
+              </g>
+            </g>
+            <g transform="translate(49.99999999999999,20)">
+              <g transform="rotate(270)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="0.25" transform="scale(1.03722 1.03722)">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.125s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="-0.125s"></animate>
+                </circle>
+              </g>
+            </g>
+            <g transform="translate(71.21320343559643,28.78679656440357)">
+              <g transform="rotate(315)">
+                <circle cx="0" cy="0" r="6" fill="#ff727d" fill-opacity="0.125" transform="scale(1.09972 1.09972)">
+                  <animateTransform attributeName="transform" type="scale" begin="0s" values="1.5 1.5;1 1"
+                    keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0"
+                    begin="0s"></animate>
+                </circle>
+              </g>
+            </g>
+            <!-- [ldio] generated by https://loading.io/ -->
+          </svg>
+          <p class="mt-3 text-center font-family-primary font-size-3 color-secondary-80 text-uppercase">Carregando</p>
+        </div>
+      </div>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </section>
+  </ng-container>
+
+  <!-- [1] Credit Proposal - Start -->
+  <ng-container *ngSwitchCase="1">
+    <section class="container register register--page register--page-1">
+      <div class="form">
+        <ng-container *ngTemplateOutlet="headerStart"></ng-container>
+        <form #registerForm="ngForm" (ngSubmit)="goTo(2)">
+          <div class="row">
+            <div class="col text-center">
+              <button class="d-inline-block btn mt-3"
+                [ngbTooltip]="'Faça uma solicitação de crédito.'">Cadastrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </section>
+  </ng-container>
+
+  <!-- [2] Credit Proposal - About You -->
+  <ng-container *ngSwitchCase="2">
+    <section class="container register register--page register--page-form register--page-2">
+      <div class="form">
+        <ng-container *ngTemplateOutlet="header"></ng-container>
+        <ng-container *ngTemplateOutlet="stepHelper"></ng-container>
+        <ng-container *ngTemplateOutlet="registerFormTemplate"></ng-container>
+      </div>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </section>
+  </ng-container>
+
+  <!-- [3] Credit Proposal - Your Situation -->
+  <ng-container *ngSwitchCase="3">
+    <section class="container register register--page register--page-form register--page-3">
+      <div class="form">
+        <ng-container *ngTemplateOutlet="header"></ng-container>
+        <ng-container *ngTemplateOutlet="stepHelper"></ng-container>
+        <ng-container *ngTemplateOutlet="registerFormTemplate"></ng-container>
+      </div>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </section>
+  </ng-container>
+
+  <!-- [4] Credit Proposal - Your Income -->
+  <ng-container *ngSwitchCase="4">
+    <section class="container register register--page register--page-form register--page-4">
+      <div class="form">
+        <ng-container *ngTemplateOutlet="header"></ng-container>
+        <ng-container *ngTemplateOutlet="stepHelper"></ng-container>
+        <ng-container *ngTemplateOutlet="registerFormTemplate"></ng-container>
+      </div>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </section>
+  </ng-container>
+
+  <!-- [5] Credit Proposal - Result -->
+  <ng-container *ngSwitchCase="5">
+    <section class="container register register--page register--page-form register--page-5">
+      <div class="form">
+        <ng-container *ngTemplateOutlet="headerEnd"></ng-container>
+        <ng-container *ngTemplateOutlet="stepHelperEnd"></ng-container>
+        <ng-container *ngTemplateOutlet="result"></ng-container>
+      </div>
+      <ng-container *ngTemplateOutlet="nature"></ng-container>
+    </section>
+  </ng-container>
+</article>
+
+
+
+<!-- Micro Components -->
+<!-- Header -->
+<ng-template #headerStart>
+  <header>
+    <img src="/assets/img/logo.png">
+    <div class="title">
+      <h1 @fade>Inclusão financeira<br>digital para você<br>e sua família.</h1>
+    </div>
+  </header>
+</ng-template>
+<ng-template #header>
+  <header>
+    <img src="/assets/img/logo.png">
+    <div class="title">
+      <h1>Solicitação de Crédito</h1>
+      <h2>Cadastro</h2>
+    </div>
+  </header>
+</ng-template>
+<ng-template #headerEnd>
+  <header>
+    <img src="/assets/img/logo.png">
+    <div class="title">
+      <h1>Solicitação de Crédito</h1>
+      <h2>Resultado</h2>
+    </div>
+  </header>
+</ng-template>
+
+<!-- Step Helper -->
+<ng-template #stepHelper>
+  <div class="step-helper">
+    <h3 @fade>{{stepTitle}}</h3>
+    <h4 @fade>{{stepSubtitle}}</h4>
+  </div>
+</ng-template>
+<ng-template #stepHelperEnd>
+  <div class="step-helper">
+    <h3 @fade>{{stepTitle}}, {{register.name|titlecase}}!</h3>
+    <h4 @fade>{{stepSubtitle}}</h4>
+  </div>
+</ng-template>
+
+<!-- Register Form -->
+<ng-template #registerFormTemplate>
+  <div class="register-form">
+    <mat-horizontal-stepper #stepper (selectionChange)="stepChanged($event)" [selectedIndex]="this.page - 2">
+      <mat-step>
+        <form class="form" #aboutYouForm="ngForm" autocomplete="off">
+          <ng-template matStepLabel>Sobre Você</ng-template>
+          <mat-form-field appearance="outline" class="w-50 pl-1 pr-3">
+            <mat-label>Nome</mat-label>
+            <input matInput required name="nome" autocomplete="new-password" [value]="register.name"
+              [(ngModel)]="register.name">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-50 pl-3 pr-1">
+            <mat-label>Cpf</mat-label>
+            <input matInput required name="cpf" autocomplete="new-password" [value]="register.cpf"
+              [valid]="isValidCPF(register.cpf)" [(ngModel)]="register.cpf"
+              (keydown)="register.cpf = validateDocument($event.target.value)"
+              (keyup)="register.cpf = validateDocument($event.target.value)"
+              (blur)="register.cpf = validateDocument($event.target.value)">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-50 pl-1 pr-3 mt-4">
+            <mat-label>Idade</mat-label>
+            <mat-select required name="idade" [(ngModel)]="register.idade" [value]="register.idade">
+              <mat-option *ngFor="let option of optionsIdade" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-50 pl-3 pr-1 mt-4">
+            <mat-label>Sexo</mat-label>
+            <mat-select required name="sexo" [(ngModel)]="register.sexo" [value]="register.sexo">
+              <mat-option *ngFor="let option of optionsSexo" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="btn-container">
+            <button class="btn btn-stepper" [ngClass]="{ 'valid': aboutYouForm.valid }" mat-button
+              matStepperNext>Avançar ></button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <form class="form" #yourSituationForm="ngForm" autocomplete="off">
+          <ng-template matStepLabel>Sua Situação</ng-template>
+          <mat-form-field appearance="outline" class="w-50 pl-1 pr-3">
+            <mat-label>Estado Cívil</mat-label>
+            <mat-select required name="estado-civil" [(ngModel)]="register.estadocivil" [value]="register.estadocivil">
+              <mat-option *ngFor="let option of optionsEstadoCivil" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-50 pl-3 pr-1">
+            <mat-label>Estado</mat-label>
+            <mat-select required name="estado" [(ngModel)]="register.estado" [value]="register.estado">
+              <mat-option *ngFor="let option of optionsEstado" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-50 offset-3 mt-4">
+            <mat-label>Dependentes</mat-label>
+            <mat-select required name="dependentes" [(ngModel)]="register.dependentes" [value]="register.dependentes">
+              <mat-option *ngFor="let option of optionsDependentes" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="btn-container">
+            <button class="btn btn-stepper" [ngClass]="{ 'valid': yourSituationForm.valid }" mat-button
+              matStepperNext>Avançar ></button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <form class="form" #yourIncomeForm="ngForm" autocomplete="off">
+          <ng-template matStepLabel>Sua Renda</ng-template>
+          <mat-form-field appearance="outline" class="w-50 offset-3">
+            <mat-label>Renda</mat-label>
+            <span matPrefix>R$ </span>
+            <input matInput required name="renda" autocomplete="new-password" [value]="register.renda"
+              [(ngModel)]="register.renda" (keydown)="register.renda = AllowOnlyNumbers($event.target.value)"
+              (keyup)="register.renda = AllowOnlyNumbers($event.target.value)"
+              (blur)="register.renda = AllowOnlyNumbers($event.target.value)">
+          </mat-form-field>
+          <div class="btn-container">
+            <button mat-button class="btn btn-stepper cta" [ngClass]="{ 'valid': yourIncomeForm.valid }"
+              (click)="registerCreditProposal()">Solicitar Crédito</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</ng-template>
+
+
+<!-- Result -->
+<ng-template #result>
+  <div class="register-form">
+    <mat-horizontal-stepper #stepper>
+      <mat-step>
+        <ng-template matStepLabel>Sua Solicitação</ng-template>
+        <div class="row">
+          <div class="col-4 col-sm-3 mt-3 mt-sm-2">
+            <img src="/assets/img/approved.svg" class="w-100">
+          </div>
+          <div class="col">
+            <span class="d-block mt-4 mb-2 font-size-2 text-left font-weight-extrabold font-family-primary color-secondary">Aprovada!</span>
+            <span class="font-size-5 text-left font-family-primary font-weight-bold  color-secondary-80">Seu limite é: <span class="ml-2 color-accent font-weight-extrabold font-size-4">Entre 500 - 1000</span></span>
+          </div>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</ng-template>
+
+<!-- Nature -->
+<ng-template #nature>
+  <div class="nature">
+    <div class="shadow" [innerHTML]="bannerText"></div>
+    <img class="bottom" src="/assets/img/nature-bottom.svg">
+    <img class="left" src="/assets/img/nature-left.svg">
+    <img class="right" src="/assets/img/nature-right.svg">
+  </div>
+</ng-template>
