@@ -2,6 +2,6 @@
 
 
 
-#### 🌎 App is deployed here: [credit-proposal](https://establishments.now.sh/)
+#### 🌎 App is deployed here: [credit-proposal](https://credit-proposal.vercel.app/)
 
 ![Preview](preview.png)
