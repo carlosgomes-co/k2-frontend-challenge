@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () => import('@register/register.module').then(m => m.RegisterModule)
   },
   {
+    path: 'register/credit-proposal/loading',
+    data: { page: 0 },
+    loadChildren: () => import('@register/register.module').then(m => m.RegisterModule)
+  },
+  {
     path: 'register/credit-proposal/about-you',
     data: { page: 2 },
     loadChildren: () => import('@register/register.module').then(m => m.RegisterModule)

@@ -3,6 +3,7 @@ $background: #ffb7ad;
 
 $primary: #001e6a;
 $primary-light: #001e6bcc;
+$primary-vivid: #1e0c78d9;
 $secondary: #662d91;
 $accent: #ef8f00;
 $accent-hover: #173787;
@@ -20,6 +21,7 @@ $colors: (
   "background": $background,
   "primary": $primary,
   "primary-light": $primary-light,
+  "primary-vivid": $primary-vivid,
   "secondary": $secondary,
   "accent": $accent,
   "accent-hover": $accent-hover,
@@ -34,15 +36,17 @@ $colors: (
 
 // Background Gradients
 $body: url("/assets/img/pattern.png"), linear-gradient(180deg, $red 0%, $blue 100%);
-$page: linear-gradient(0deg, $transparent, $transparent), linear-gradient(180deg, $peach 0%, $light-yellow 100%);
+$page: linear-gradient(0deg, $transparent, $transparent), linear-gradient(180deg, $peach 0%, $yellow 100%);
+$form: linear-gradient(0deg, transparentize($white, 0.2), transparentize($white, 0.2)), linear-gradient(180deg, $peach 0%, $yellow 100%);
 $button: linear-gradient(180deg, $base 28.13%, $light-yellow 100%);
 $button-cta: linear-gradient(180deg, $peach 0%, $yellow 100%);
 $button-curtain: linear-gradient(180deg, transparentize($peach, 1), $primary-light 80%);
 $nature: linear-gradient(180deg, $peach 0%, $yellow 100%);
-$curtain: linear-gradient(180deg, transparentize($peach, 1) 40%, $primary-light 100%);
+$curtain: linear-gradient(180deg, transparentize($peach, 1) 40%, $primary-vivid 100%);
 $background-gradients: (
   "body": $body,
   "page": $page,
+  "form": $form,
   "button": $button,
   "button-cta": $button-cta,
   "button-curtain": $button-curtain,
@@ -54,13 +58,17 @@ $background-gradients: (
 $register-shadow: 0px 20px 20px transparentize($black, 0.9), 5px 10px 0px transparentize($black, 0.9), 5px 12px 5px transparentize($black, 0.9), 0px 4px 4px transparentize($black, 0.8);
 $box-shadows: (
   "register": $register-shadow,
+  "form": 3px 3px 10px rgba(0, 0, 0, 0.05),
+  "nature": 0px 20px 20px transparentize($primary, 0.75),
   "button": 2px 3px 0px transparentize($primary, 0.6),
+  "button-stepper": 2px 3px 0px transparentize($primary, 0.6),
   "button-hover": 0 8px 8px 0 transparentize($primary, 0.75),
   "button-cta": 3px 5px 0px transparentize($primary, 0.6),
 );
 
 // Border Radius
 $border-radius: (
+  "logo": 0.8rem,
   "small": 45px,
   "medium": 50px,
   "big": 70px,
@@ -68,14 +76,14 @@ $border-radius: (
 
 /* Font config */
 /* Font Families */
-$font_primary: "Dosis", sans-serif;
+$font-primary: "Dosis", sans-serif;
 
-$font_families: (
-  "primary": $font_primary,
+$font-families: (
+  "primary": $font-primary,
 );
 
 /* Font sizes */
-$font_sizes: (
+$font-sizes: (
   0: 4vw,
   1: 36px,
   2: 24px,
@@ -84,6 +92,7 @@ $font_sizes: (
   5: 15px,
   6: 14px,
   7: 12px,
+  8: 9px
 );
 
 /* Font weight */
@@ -93,7 +102,7 @@ $semi-bold: 600;
 $bold: 700;
 $extrabold: 800;
 
-$font_weights: (
+$font-weights: (
   "light": $light,
   "medium": $medium,
   "semi-bold": $semi-bold,
@@ -104,6 +113,7 @@ $font_weights: (
 $image-sizes: (
   "logo": 20%,
   "logo-mobile": 25%,
+  "logo-form": 15%,
 );
 
 /* 
@@ -155,7 +165,7 @@ $image-sizes: (
   }
 
   /* Font Families */
-  @each $name, $font_family in $font_families {
+  @each $name, $font_family in $font-families {
     --ff-#{$name}: #{$font_family};
 
     /* class */
@@ -165,9 +175,9 @@ $image-sizes: (
   }
 
   /* Font sizes */
-  @each $number, $font_size in $font_sizes {
+  @each $number, $font_size in $font-sizes {
     --fs-#{$number}: #{$font_size};
-    --kh-#{$number}: #{$font_size};
+    --lh-#{$number}: #{$font_size};
 
     /* class */
     .font-size-#{$number} {
@@ -223,7 +233,7 @@ $image-sizes: (
   }
 
   /* Font weight */
-  @each $name, $font_weight in $font_weights {
+  @each $name, $font_weight in $font-weights {
     --fw-#{$name}: #{$font_weight};
 
     /* class */
